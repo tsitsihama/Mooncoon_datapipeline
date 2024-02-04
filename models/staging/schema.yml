@@ -1,0 +1,358 @@
+version: 2
+
+models:
+  - name: stg_results__mission__agencies
+    description: "Table for Mission Agencies"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: ""
+      - name: country_code
+        description: ""
+      - name: abbrev
+        description: ""
+      - name: description
+        description: ""
+      - name: administrator
+        description: ""
+      - name: founding_year
+        description: ""
+      - name: launchers
+        description: ""
+      - name: spacecraft
+        description: ""
+      - name: total_launch_count
+        description: ""
+      - name: successful_launches
+        description: ""
+      - name: failed_launches
+        description: ""
+      - name: pending_launches
+        description: ""
+      - name: successful_landings
+        description: ""
+      - name: failed_landings
+        description: ""
+      - name: attempted_landings
+        description: ""
+      - name: info_url
+        description: ""
+
+  - name: stg_results__program
+    description: ""
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: ""
+      - name: description
+        description: ""
+      - name: start_date
+        description: ""
+
+  - name: stg_results__rocket__launcher_stage
+    description: ""
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: launcher__details
+        description: ""
+      - name: landing__description
+        description: ""
+      - name: landing__location__location__name
+        description: ""
+      - name: landing__location__location__total_launch_count
+        description: ""
+      - name: landing__location__location__total_landing_count
+        description: ""
+      - name: landing__location__successful_landings
+        description: ""
+
+  - name: stg_results__updates
+    description: ""
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: comment
+        description: ""
+      - name: created_by
+        description: ""
+      - name: created_on
+        description: ""
+      - name: landing__location__location__total_launch_count
+        description: ""
+
+
+  - name: mooncoon_rocket_launches_table__results
+    description: "A table for the Rocket Launches Results"
+    columns:
+      - name: id
+        description: "Primary key for rocket launches table"
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: "Rocket launch name"
+
+      - name: status__name
+        description: "Status name of the rocket launch"
+
+      - name: status__description
+        description: "Status description of the rocket launch"
+
+      - name: last_updated
+        description: "Timestamp for the last update"
+
+      - name: net
+        description: "Net value for the rocket launch"
+
+      - name: net_precision__name
+        description: "Precision name for the net value"
+
+      - name: window_end
+        description: "End time of the launch window"
+
+      - name: window_start
+        description: "Start time of the launch window"
+
+      - name: launch_service_provider__name
+        description: "Name of the launch service provider"
+
+      - name: launch_service_provider__country_code
+        description: "Country code of the launch service provider"
+
+      - name: launch_service_provider__founding_year
+        description: "Founding year of the launch service provider"
+
+      - name: launch_service_provider__launchers
+        description: "Launchers used by the service provider"
+
+      - name: launch_service_provider__spacecraft
+        description: "Spacecraft used by the service provider"
+
+      - name: launch_service_provider__total_launch_count
+        description: "Total launch count by the service provider"
+
+      - name: launch_service_provider__consecutive_successful_launches
+        description: "Consecutive successful launches by the service provider"
+
+      - name: launch_service_provider__successful_launches
+        description: "Total successful launches by the service provider"
+
+      - name: launch_service_provider__failed_launches
+        description: "Total failed launches by the service provider"
+
+      - name: launch_service_provider__pending_launches
+        description: "Pending launches by the service provider"
+
+      - name: launch_service_provider__consecutive_successful_landings
+        description: "Consecutive successful landings by the service provider"
+
+      - name: launch_service_provider__successful_landings
+        description: "Total successful landings by the service provider"
+
+      - name: launch_service_provider__failed_landings
+        description: "Total failed landings by the service provider"
+
+      - name: launch_service_provider__attempted_landings
+        description: "Attempted landings by the service provider"
+
+      - name: launch_service_provider__info_url
+        description: "Info URL of the launch service provider"
+
+      - name: launch_service_provider__image_url
+        description: "Image URL of the launch service provider"
+
+      - name: rocket__id
+        description: "ID of the rocket"
+
+      - name: rocket__configuration__name
+        description: "Name of the rocket configuration"
+
+      - name: rocket__configuration__description
+        description: "Description of the rocket configuration"
+
+      - name: rocket__configuration__family
+        description: "Family of the rocket configuration"
+
+      - name: rocket__configuration__manufacturer__country_code
+        description: "Country code of the rocket manufacturer"
+
+      - name: rocket__configuration__manufacturer__description
+        description: "Description of the rocket manufacturer"
+
+      - name: rocket__configuration__manufacturer__administrator
+        description: "Administrator of the rocket manufacturer"
+
+      - name: rocket__configuration__manufacturer__founding_year
+        description: "Founding year of the rocket manufacturer"
+
+      - name: rocket__configuration__manufacturer__launchers
+        description: "Launchers used by the rocket manufacturer"
+
+      - name: rocket__configuration__manufacturer__spacecraft
+        description: "Spacecraft used by the rocket manufacturer"
+
+      - name: rocket__configuration__manufacturer__total_launch_count
+        description: "Total launch count by the rocket manufacturer"
+
+      - name: rocket__configuration__manufa3nns4wsecutive_successful_launches
+        description: "Consecutive successful launches by the rocket manufacturer"
+
+      - name: rocket__configuration__manufacturer__successful_launches
+        description: "Total successful launches by the rocket manufacturer"
+
+      - name: rocket__configuration__manufacturer__failed_launches
+        description: "Total failed launches by the rocket manufacturer"
+
+      - name: rocket__configuration__manufacturer__pending_launches
+        description: "Pending launches by the rocket manufacturer"
+
+      - name: rocket__configuration__manufadym7hwsecutive_successful_landings
+        description: "Consecutive successful landings by the rocket manufacturer"
+
+      - name: rocket__configuration__manufacturer__successful_landings
+        description: "Total successful landings by the rocket manufacturer"
+
+      - name: rocket__configuration__manufacturer__failed_landings
+        description: "Total failed landings by the rocket manufacturer"
+
+      - name: rocket__configuration__manufacturer__attempted_landings
+        description: "Attempted landings by the rocket manufacturer"
+
+      - name: rocket__configuration__total_launch_count
+        description: "Total launch count for the rocket configuration"
+
+      - name: rocket__configuration__consecutive_successful_launches
+        description: "Consecutive successful launches for the rocket configuration"
+
+      - name: rocket__configuration__successful_launches
+        description: "Total successful launches for the rocket configuration"
+
+      - name: rocket__configuration__failed_launches
+        description: "Total failed launches for the rocket configuration"
+
+      - name: rocket__configuration__pending_launches
+        description: "Pending launches for the rocket configuration"
+
+      - name: rocket__configuration__attempted_landings
+        description: "Attempted landings for the rocket configuration"
+
+      - name: rocket__configuration__successful_landings
+        description: "Total successful landings for the rocket configuration"
+
+      - name: rocket__configuration__failed_landings
+        description: "Total failed landings for the rocket configuration"
+
+      - name: rocket__configuration__consecutive_successful_landings
+        description: "Consecutive successful landings for the rocket configuration"
+
+      - name: mission__id
+        description: "ID of the mission"
+
+      - name: mission__name
+        description: "Name of the mission"
+
+      - name: mission__description
+        description: "Description of the mission"
+
+      - name: mission__type
+        description: "Type of the mission"
+
+      - name: mission__orbit__name
+        description: "Orbit name of the mission"
+
+      - name: pad__id
+        description: "ID of the launch pad"
+
+      - name: pad__agency_id
+        description: "ID of the pad agency"
+
+      - name: pad__name
+        description: "Name of the launch pad"
+
+      - name: pad__wiki_url
+        description: "Wiki URL of the launch pad"
+
+      - name: pad__map_url
+        description: "Map URL of the launch pad"
+
+      - name: pad__location__name
+        description: "Name of the launch pad location"
+
+      - name: pad__location__country_code
+        description: "Country code of the launch pad location"
+
+      - name: pad__location__map_image
+        description: "Map image URL of the launch pad location"
+
+      - name: pad__location__timezone_name
+        description: "Timezone name of the launch pad location"
+
+      - name: pad__location__total_launch_count
+        description: "Total launch count from the launch pad location"
+
+      - name: pad__location__total_landing_count
+        description: "Total landing count from the launch pad location"
+
+      - name: pad__country_code
+        description: "Country code of the launch pad"
+
+      - name: pad__map_image
+        description: "Map image URL of the launch pad"
+
+      - name: pad__total_launch_count
+        description: "Total launch count from the launch pad"
+
+      - name: pad__orbital_launch_attempt_count
+        description: "Orbital launch attempt count from the launch pad"
+
+      - name: image
+        description: "Image URL for the rocket launch"
+
+      - name: orbital_launch_attempt_count
+        description: "Orbital launch attempt count for the rocket launch"
+
+      - name: location_launch_attempt_count
+        description: "Location launch attempt count for the rocket launch"
+
+      - name: pad_launch_attempt_count
+        description: "Pad launch attempt count for the rocket launch"
+
+      - name: agency_launch_attempt_count
+        description: "Agency launch attempt count for the rocket launch"
+
+      - name: orbital_launch_attempt_count_year
+        description: "Orbital launch attempt count for the rocket launch (yearly)"
+
+      - name: location_launch_attempt_count_year
+        description: "Location launch attempt count for the rocket launch (yearly)"
+
+      - name: pad_launch_attempt_count_year
+        description: "Pad launch attempt count for the rocket launch (yearly)"
+
+      - name: agency_launch_attempt_count_year
+        description: "Agency launch attempt count for the rocket launch (yearly)"
+
+      - name: launch_service_provider__id
+        description: "Launch Service Provider"
+
+      - name: pad__location__url
+        description: "Url for Pad Location"
+
+      - name: launch_service_provider__id
+        description: "Launch Service Provider"
+

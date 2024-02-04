@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: mooncoon_rocket_data 
+    database: mooncoon_rocket_data 
+    schema: mooncoon_rocket_dataset 
+    tables:
+      - name: mooncoon_rocket_launches_table__results
+      - name: mooncoon_rocket_launches_table__results__mission__agencies
+      - name: mooncoon_rocket_launches_table__results__program
+      - name: mooncoon_rocket_launches_table__results__rocket__launcher_stage
+      - name: mooncoon_rocket_launches_table__results__updates
+
+
+
+
+
+
